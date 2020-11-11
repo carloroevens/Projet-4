@@ -6,6 +6,12 @@ class Autoloader {
 	}
 
 	static function autoload($class) {
-		require 'model/' . $class . '.php';
+		if ($class == 'Manager' || $class == 'PostManager') {
+			require 'model/' . $class . '.php';
+		}
+		else {
+			require 'controller/' . $class . '.php';
+		}
+		
 	}
 }

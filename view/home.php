@@ -5,12 +5,12 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<?php foreach ($db->getPosts() as $post): ?>
+		<?php foreach ($db->getPosts('PostUtility') as $posts): ?>
 			
 			<div>
-				<h1><a href="index.php?action=single&id=<?php echo $post->id; ?>" ><?= $post->title; ?></a></h1>
+				<h1><a href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h1>
 
-				<p><?= $post->content; ?></p>
+				<?= $posts->getContent(); ?>
 			</div>
 
 		<?php endforeach; ?>
