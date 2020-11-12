@@ -11,19 +11,20 @@ if (isset($_GET['action']))
 }
 
 //initialisation des objects
-$db = new PostManager();
+$post = new Post();
 
 try{
-	if ($action === 'home') {
-		require ('view/home.php');
+	if ($action === 'home') 
+	{
+		$post->getHomePage();
 	}
 	elseif ($action === 'single') 
 	{
 		if (isset($_GET['id']) && $_GET['id'] > 0) 
 		{
-			require ('view/single.php');
+			$post->getSinglePage();
 		}
-		else 
+		else if ($_GET['id'] > $post->number_Post())
 		{
 			throw new Exception('Mauvaise identifation de billet envoyé');
 		}

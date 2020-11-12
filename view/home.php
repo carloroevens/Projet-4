@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<?php foreach ($db->getPosts('PostUtility') as $posts): ?>
+		<?php foreach ($postmanager->getPosts('PostUtility') as $posts): ?>
 			
 			<div>
 				<h1><a href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h1>

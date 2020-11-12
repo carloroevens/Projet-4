@@ -11,7 +11,7 @@ class PostManager extends Manager
 		return $datas;
 	}
 
-	public function getPost($postId, $class)
+	public function getSinglePost($postId, $class)
 	{
 		$db = $this->dbConnect();
 
@@ -21,5 +21,14 @@ class PostManager extends Manager
 		$datas = $req->fetch();
 
 		return $datas;
+	}
+
+	public function getNumberPost()
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->query('SELECT COUNT(id) FROM chapitres');
+
+		return $req;
 	}
 }
