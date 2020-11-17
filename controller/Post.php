@@ -4,6 +4,7 @@ class Post
 	public function number_Post()
 	{
 		$postmanager = new PostManager();
+		
 		return getNumberPost();
 	}
 

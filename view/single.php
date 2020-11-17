@@ -7,5 +7,6 @@
 	<body>
 		<h1><?= $post->title; ?></h1>
 		<p><?= $post->content; ?></p>
+		<p><?= $post->date_chapitre; ?></p>
 	</body>
 </html>
