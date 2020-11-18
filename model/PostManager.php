@@ -5,7 +5,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT *, DATE_FORMAT(date_chapitre, "%d/%m/%y") FROM chapitres');
+		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "%d/%m/%y") FROM chapter');
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
 		return $datas;
@@ -15,7 +15,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT *, DATE_FORMAT(date_chapitre, "%d/%m/%y") FROM chapitres WHERE id = ?');
+		$req = $db->prepare('SELECT *, DATE_FORMAT(date_chapter, "%d/%m/%y") FROM chapter WHERE id = ?');
 		$req->execute(array($postId));
 		$req->setFetchMode(PDO::FETCH_CLASS, $class);
 		$datas = $req->fetch();
@@ -27,7 +27,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT COUNT(id) FROM chapitres');
+		$req = $db->query('SELECT COUNT(id) FROM chapter');
 		$data = $req->fetch();
 
 		return $data;
@@ -37,7 +37,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('DELETE FROM chapitres WHERE id = ?');
+		$req = $db->prepare('DELETE FROM chapter WHERE id = ?');
 		$req->execute(array($postId));
 	}
 
@@ -45,7 +45,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO chapitres (title, content, date_chapitre) VALUES (?, ?, NOW())');
+		$req = $db->prepare('INSERT INTO chapter (title, content, date_chapter) VALUES (?, ?, NOW())');
 		$req->execute([$title, $content]);
 	}
 
@@ -53,7 +53,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE chapitres SET title = ?, content = ?, date_chapitre = NOW() WHERE id = ?');
+		$req = $db->prepare('UPDATE chapter SET title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
 		$req->execute([$title, $content, $id]);
 	}
 }

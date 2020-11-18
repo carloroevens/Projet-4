@@ -5,7 +5,7 @@ class CommentManager extends Maneger
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") FROM comments WHERE id_chapitre = ?');
+		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") FROM comments WHERE id_chapter = ?');
 		$req->execute([$postid]);
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
@@ -20,12 +20,14 @@ class CommentManager extends Maneger
 		$req->execute([$commentid]);
 	}
 
-	public function insertComment($id_chapitre, $author, $content)
+	public function insertComment($id_chapter, $author, $content)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO comments (id_chapitre, author, content, date_comment) VALUES (?, ?, ?, NOW())');
-		$req->execute([$id_chapitre, $author, $content]);
+		$req = $db->prepare('INSERT INTO comments (id_chapter, author, content, date_comment) VALUES (?, ?, ?, NOW())');
+		$result = $req->execute([$id_chapter, $author, $content]);
+
+		return $result;
 	}
 
 	public function updateComment($newContent, $idComment)

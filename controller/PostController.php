@@ -1,11 +1,13 @@
 <?php
-class Post 
+class PostController
 {
 	public function number_Post()
 	{
 		$postmanager = new PostManager();
 		
-		return getNumberPost();
+		$result = $postmanager->getNumberPost();
+		
+		return $result;
 	}
 
 	public function getHomePage()

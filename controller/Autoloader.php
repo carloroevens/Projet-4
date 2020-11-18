@@ -6,7 +6,7 @@ class Autoloader {
 	}
 
 	static function autoload($class) {
-		if ($class == 'Manager' || $class == 'PostManager') {
+		if ($class == 'Manager' || $class == 'PostManager' || $class == 'CommentManager') {
 			require 'model/' . $class . '.php';
 		}
 		else {

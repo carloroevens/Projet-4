@@ -5,8 +5,10 @@
 	<meta charset="utf-8">
 </head>
 	<body>
-		<h1><?= $post->title; ?></h1>
-		<p><?= $post->content; ?></p>
-		<p><?= $post->date_chapitre; ?></p>
+		<div class="chapter">
+			<h1><?= $post->title; ?></h1>
+			<p><?= $post->content; ?></p>
+			<p><?= $post->date_chapter; ?></p>
+		</div>
 	</body>
 </html>

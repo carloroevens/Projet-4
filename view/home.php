@@ -11,7 +11,7 @@
 				<h1><a href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h1>
 
 				<?= $posts->getContent(); ?>
-				<p><?= $posts->date_chapitre; ?></p>
+				<p><?= $posts->date_chapter; ?></p>
 			</div>
 
 		<?php endforeach; ?>
