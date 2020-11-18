@@ -5,7 +5,7 @@ class CommentController
 	{
 		$commentManager = new CommentManager();
 
-		$addComment = $commentController->insertComment($id_chapter, $author, $content);
+		$addComment = $commentManager->insertComment($id_chapter, $author, $content);
 
 		if ($result === false) {
 			throw new Exception('Imposible d\'ajouter le commentaire');

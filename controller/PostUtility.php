@@ -2,7 +2,7 @@
 class PostUtility {
 	
 	public function getUrl() {
-		return 'index.php?action=single&id=' . $this->id;
+		return 'index.php?action=single&idChapter=' . $this->id;
 	}
 
 	public function getContent() {

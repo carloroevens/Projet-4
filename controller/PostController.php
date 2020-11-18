@@ -19,7 +19,7 @@ class PostController
 	public function getSinglePage()
 	{
 		$postmanager = new PostManager();
-		$post = $postmanager->getSinglePost($_GET['id'], 'PostUtility');
+		$post = $postmanager->getSinglePost($_GET['idChapter'], 'PostUtility');
 		require ('view/single.php');
 	}
 }

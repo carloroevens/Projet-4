@@ -21,7 +21,7 @@ try{
 	}
 	elseif ($action === 'single') 
 	{	
-		if (isset($_GET['id']) && $_GET['id'] <= $postController->number_Post() && $_GET['id'] > 0) 
+		if (isset($_GET['idChapter']) && $_GET['idChapter'] <= $postController->number_Post() && $_GET['idChapter'] > 0) 
 		{ 			
 			$postController->getSinglePage();
 		}
@@ -31,11 +31,11 @@ try{
 		}		
 	}
 	elseif ($action === 'addcomment') {
-		if (isset($_GET['id']) && $_GET['id'] > 0 && $_GET['id'] <= $postController->number_Post()) 
+		if (isset($_GET['idChapter']) && $_GET['idChapter'] > 0 && $_GET['idChapter'] <= $postController->number_Post()) 
 		{
 			if (!empty($_POST['author']) && !empty($_POST['content'])) 
 			{
-				$commentController->addComment($_GET['id'], $_POST['author'], $_POST['content'])
+				$commentController->addComment($_GET['idChapter'], $_POST['author'], $_POST['content']);
 			}
 			else
 			{
