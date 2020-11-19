@@ -5,7 +5,7 @@ class CommentManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") FROM comments WHERE id_chapter = ?');
+		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") AS date_comment FROM comments WHERE id_chapter = ?');
 		$req->execute([$postid]);
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 

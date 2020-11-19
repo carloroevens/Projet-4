@@ -28,5 +28,17 @@
 				</div>
 			</form>
 		</div>
+
+		<!--list of comment-->
+		<div>
+			<?php foreach ($getCommentList = $commentManager->getComments($_GET['idChapter'], 'CommentController') as $comment): ?>
+			
+			<div>
+				<p><strong><?php echo htmlspecialchars($comment->author) ?></strong>  <?= $comment->date_comment ?></p>
+				<p><?php echo htmlspecialchars($comment->content) ?></p>
+			</div>
+
+		<?php endforeach; ?>
+		</div>
 	</body>
 </html>

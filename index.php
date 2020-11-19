@@ -11,19 +11,20 @@ if (isset($_GET['action']))
 }
 
 //initialisation des objects
+$appController = new AppController();
 $postController = new PostController();
 $commentController = new CommentController();
 
 try{
 	if ($action === 'home') 
 	{
-		$postController->getHomePage();
+		$appController->getHomePage();
 	}
 	elseif ($action === 'single') 
 	{	
 		if (isset($_GET['idChapter']) && $_GET['idChapter'] <= $postController->number_Post() && $_GET['idChapter'] > 0) 
 		{ 			
-			$postController->getSinglePage();
+			$appController->getSinglePage();
 		}
 		else
 		{

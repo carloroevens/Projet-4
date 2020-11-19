@@ -10,7 +10,8 @@ class CommentController
 		if ($result === false) {
 			throw new Exception('Imposible d\'ajouter le commentaire');
 		}else {
-			header('location: index.php?action=single&id=' . $id_chapter);
+			header('location: index.php?action=single&idChapter=' . $id_chapter);
 		}
 	}
+
 }

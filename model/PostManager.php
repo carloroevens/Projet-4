@@ -5,7 +5,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "%d/%m/%y") FROM chapter');
+		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter');
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
 		return $datas;
@@ -15,7 +15,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT *, DATE_FORMAT(date_chapter, "%d/%m/%y") FROM chapter WHERE id = ?');
+		$req = $db->prepare('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter WHERE id = ?');
 		$req->execute(array($postId));
 		$req->setFetchMode(PDO::FETCH_CLASS, $class);
 		$datas = $req->fetch();

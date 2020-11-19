@@ -10,16 +10,11 @@ class PostController
 		return $result;
 	}
 
-	public function getHomePage()
-	{
-		$postmanager = new PostManager();
-		require ('view/home.php');
+	public function getUrl() {
+		return 'index.php?action=single&idChapter=' . $this->id;
 	}
 
-	public function getSinglePage()
-	{
-		$postmanager = new PostManager();
-		$post = $postmanager->getSinglePost($_GET['idChapter'], 'PostUtility');
-		require ('view/single.php');
+	public function getContent() {
+		return '<p>' . substr($this->content, 0, 300) . '...</p>';
 	}
 }
