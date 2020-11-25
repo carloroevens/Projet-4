@@ -1,4 +1,32 @@
 .navbar-color
 {
-	background-color: #19294D;
+	background-color: #1D2951;
+}
+
+.hero
+{
+	background: url(../img/background.jpg) no-repeat center left 32%;
+	width: 100%;
+	height: 450px;
+}
+
+.quote-author
+{
+	color: #FCA311;
+	margin-left: 45%;
+}
+
+.card-title
+{
+	color: #FCA311;
+}
+
+.card-title:hover
+{
+	color: #FCA311;
+}
+
+.color-title
+{
+	color: #233A6C;
 }

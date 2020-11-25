@@ -15,6 +15,6 @@ class PostController
 	}
 
 	public function getContent() {
-		return '<p>' . substr($this->content, 0, 300) . '...</p>';
+		return substr($this->content, 0, 300) . '...';
 	}
 }
