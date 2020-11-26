@@ -15,4 +15,9 @@ class AppController
 		$post = $postmanager->getSinglePost($_GET['idChapter'], 'PostController');
 		require ('view/single.php');
 	}
+
+	public function getBiography()
+	{
+		require ('view/biography.php');
+	}
 }

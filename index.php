@@ -48,7 +48,16 @@ try{
 			throw new Exception('Mauvaise identifation de billet envoyé');
 		}
 	}
+	elseif ($action === 'biography') 
+	{
+		$appController->getbiography();
+	}
+	else
+	{
+		throw new Exception("Cette page n'existe pas");
+	}
 }
+
 
 catch(Exception $e)
 {

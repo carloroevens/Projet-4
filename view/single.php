@@ -8,43 +8,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="public/css/header.css">
 
 	</head>
 	<body>
+
+		<!--herder-->
+
+		<?php require('header.php') ?>
+
 		<!--chapter-->
-		<div>
-			<h1><?= $post->title; ?></h1>
-			<p><?= $post->content; ?></p>
-			<p><?= $post->date_chapter; ?></p>
-		</div>
-
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col">
+					<h1 class="text-center color-yellow display-3"><?= $post->title; ?></h1>
+					<p class="h5 mb-4">Chapitre <?= $post->id; ?></p>
+					<p class="mb-4"><?= $post->content; ?></p>
+					<p class="text-muted"><?= $post->date_chapter; ?></p>
+				</div>
+			</div>
+		
 		<!--write comment-->
-		<div>
-			<form action="index.php?action=addcomment&amp;idChapter=<?= $post->id ?>" method="post">
-				<div>
-					<label for="author">Auteur</label><br/>
-					<input type="text" id="author" name="author" />
-				</div>
-				<div>
-					<label for="content">Commentaire</label><br/>
-					<textarea id="content" name="content"></textarea>
-				</div>
-				<div>
-					<input type="submit">
-				</div>
-			</form>
-		</div>
 
-		<!--list of comment-->
-		<div>
-			<?php foreach ($getCommentList = $commentManager->getComments($_GET['idChapter'], 'CommentController') as $comment): ?>
-			
-			<div>
-				<p><strong><?php echo htmlspecialchars($comment->author) ?></strong>  <?= $comment->date_comment ?></p>
-				<p><?php echo htmlspecialchars($comment->content) ?></p>
+			<div class="row mb-5">
+				<div class="col">
+					<form action="index.php?action=addcomment&amp;idChapter=<?= $post->id ?>" method="post">
+						<div class="form-group">
+							<label for="author">Nom</label><span class="text-muted"> (Pseudo)</span><br/>
+							<input class="form-control w-25" type="text" id="author" name="author" />
+						</div>
+						<div class="form-group">
+							<label for="content">Votre commentaire</label><br/>
+							<textarea class="form-control" rows="3" id="content" name="content"></textarea>
+						</div>
+						
+						<button class="btn btn-primary" type="submit">Envoyer !</button>
+					</form>
+				</div>
 			</div>
 
-		<?php endforeach; ?>
+		<!--list of comment-->
+
+			<div class="row">
+				<div class="col">
+					<?php foreach ($getCommentList = $commentManager->getComments($_GET['idChapter'], 'CommentController') as $comment): ?>
+					
+					<div class="media">
+						<div class="media-body">
+							<h5 class="mt-0"><?php echo htmlspecialchars($comment->author) ?></h5>
+							<p class="text-muted"><?= $comment->date_comment ?></p>
+					    	<p class="lead"><?php echo htmlspecialchars($comment->content) ?></p>
+						</div>
+					</div>
+
+					<?php endforeach; ?>
+				</div>
+			</div>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

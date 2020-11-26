@@ -16,38 +16,7 @@
 		<!--hearder-->
 
 		<header class="hero">
-			<div class="navbar-color">
-				<div class="container">
-					<div class="row mb-5 p-2">
-						<nav class="col navbar navbar-expand-lg navbar-dark">
-							<a class="navbar-brand" href="#">
-								Jean Forteroche
-							</a>
-							<button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#navbarContent'>
-					        	<span class="navbar-toggler-icon"></span>
-					        </button>
-					        <div id="navbarContent" class="collapse navbar-collapse">
-					        	<ul class="navbar-nav">
-						        	<li class="nav-item active">
-						        		<a class="nav-link" href="#">Accueil</a>
-						        	</li>
-						        	<li class="nav-item">
-						        		<a class="nav-link" href="#">Biographie</a>
-						        	</li>
-						        </ul>
-						        <ul class="navbar-nav ml-md-auto">
-						        	<li class="nav-item active">
-						        		<a class="nav-link" href="#">S'inscrire</a>
-						        	</li>
-						        	<li class="nav-item active">
-						        		<a class="nav-link" href="#">Connexion</a>
-						        	</li>
-						        </ul>
-						    </div>
-						</nav>
-					</div>
-				</div>
-			</div>
+			<?php require('header.php') ?>
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -66,21 +35,26 @@
 
 			<div class="container">
 				<div class="row jumbotron mt-5">
-					<p class="col-12 col-md-4 text-center">bienvenue sur mon site. Je suis Jean Rochefort écrivain et acteur mais nous s'en reparleront plus tard, laisser moi d'abord vous présentez le concept de ce site qui ma foi, est assez simple.</p>
+					<p class="col-12 col-md-4 text-center mt-1">Bienvenue sur mon site. Je suis Jean Rochefort écrivain et acteur mais nous s'en reparleront plus tard, laisser moi d'abord vous présentez le concept de ce site qui ma foi, est assez simple.</p>
 
-					<p class="col-12 col-md-4 text-center">J'ai décidé de sortir mon prochain livre sur le web plutôt que de façon traditionnelle, il devrait donc il y avoir 3 chapitres à l'ouverture de ce site et étre agrémentais d'un autre chapitre chaque semaine jusqu'a sa publication compléte.</p>
+					<p class="col-12 col-md-4 text-center mt-5 mb-auto">J'ai décidé de sortir mon prochain livre sur le web plutôt que de façon traditionnelle, il devrait donc il y avoir 3 chapitres à l'ouverture de ce site et étre agrémentais d'un autre chapitre chaque semaine jusqu'a sa publication compléte.</p>
 										
-					<p class="col-12 col-md-4 text-center">Ceci me permettra d'avoir votre ressenties directement aprés votre lecture grace aux commentaires. Vous trouverez le synopsis juste en dessous .</p>
+					<p class="col-12 col-md-4 text-center mt-1">Ceci me permettra d'avoir votre ressenties directement aprés votre lecture grace aux commentaires. Vous trouverez le synopsis juste en dessous .</p>
 						
 				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="container">
 
 				<!--synopsis-->
 
 				<div class="row">
 					<div class="col">
-						<p class="h1 text-center">Synopsis</p>
-						<p class="h4 text-center color-title mb-3">Un billet simple pour l'Alaska</p>
-						<p class="text-center mb-5">Peter Flectcher avait tout juste 2 ans quand sa mère a quitté l’Alaska, fuyant la vie trop rude, et laissant derrière elle le père de Peter. Peter a aujourd’hui 26 ans et mène une vie bien remplie à Toronto. Lorsqu’il apprend que les jours de son père, très malade, sont peut-être comptés, il entreprend le voyage jusqu’à son village natal. Il va alors découvrir le quotidien « à la dure » , les journées qui comptent peu d’heures de clarté, les nuits à la belle étoile… Il va en profiter pour mieux connaître son père, à qui il tient beaucoup malgré les erreurs qu’il a commises.</p>
+						<p class="h1 text-center my-3 ">Synopsis</p>
+						<p class="h4 text-center mb-4">Un billet simple pour l'Alaska</p>
+						<p class="text-center mb-5 lead">Peter Flectcher avait tout juste 2 ans quand sa mère a quitté l’Alaska, fuyant la vie trop rude, et laissant derrière elle le père de Peter. Peter a aujourd’hui 26 ans et mène une vie bien remplie à Toronto. Lorsqu’il apprend que les jours de son père, très malade, sont peut-être comptés, il entreprend le voyage jusqu’à son village natal. Il va alors découvrir le quotidien « à la dure » , les journées qui comptent peu d’heures de clarté, les nuits à la belle étoile… Il va en profiter pour mieux connaître son père, à qui il tient beaucoup malgré les erreurs qu’il a commises.</p>
 					</div>
 				</div>
 
@@ -91,7 +65,7 @@
 				<?php foreach ($postmanager->getPosts('PostController') as $posts): ?>
 				
 					<div class="col-12 col-md-6">
-						<div class="card mb-5 mb-md-4">
+						<div class="card shadow mb-5 mb-md-4">
 							<div class="card-body">
 								<h5 class="card-title text-center"><a class="stretched-link text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
 							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id; ?></h6>
