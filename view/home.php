@@ -37,7 +37,7 @@
 				<div class="row jumbotron mt-5">
 					<p class="col-12 col-md-4 text-center mt-1">Bienvenue sur mon site. Je suis Jean Rochefort écrivain et acteur mais nous s'en reparleront plus tard, laisser moi d'abord vous présentez le concept de ce site qui ma foi, est assez simple.</p>
 
-					<p class="col-12 col-md-4 text-center mt-5 mb-auto">J'ai décidé de sortir mon prochain livre sur le web plutôt que de façon traditionnelle, il devrait donc il y avoir 3 chapitres à l'ouverture de ce site et étre agrémentais d'un autre chapitre chaque semaine jusqu'a sa publication compléte.</p>
+					<p class="col-12 col-md-4 text-center mt-1">J'ai décidé de sortir mon prochain livre sur le web plutôt que de façon traditionnelle, il devrait donc il y avoir 3 chapitres à l'ouverture de ce site et étre agrémentais d'un autre chapitre chaque semaine jusqu'a sa publication compléte.</p>
 										
 					<p class="col-12 col-md-4 text-center mt-1">Ceci me permettra d'avoir votre ressenties directement aprés votre lecture grace aux commentaires. Vous trouverez le synopsis juste en dessous .</p>
 						

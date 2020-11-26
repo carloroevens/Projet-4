@@ -28,7 +28,8 @@ class PostManager extends Manager
 		$db = $this->dbConnect();
 
 		$req = $db->query('SELECT COUNT(id) FROM chapter');
-		$data = $req->fetch();
+		$datas = $req->fetch();
+		$data = intval($datas['COUNT(id)']);
 
 		return $data;
 	}
