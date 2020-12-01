@@ -1,4 +1,4 @@
-.navbar-color
+.color-blue
 {
 	background-color: #1D2951;
 }
@@ -34,4 +34,16 @@
 .color-yellow
 {
 	color: #FCA311;
+}
+
+.link
+{
+	color: white;
+	opacity: 50%;
+}
+
+.link:hover
+{
+	opacity: 100%;
+	color: white;
 }

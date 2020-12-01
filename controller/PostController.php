@@ -3,9 +3,9 @@ class PostController
 {
 	public function number_Post()
 	{
-		$postmanager = new PostManager();
+		$postManager = new PostManager();
 		
-		$result = $postmanager->getNumberPost();
+		$result = $postManager->getNumberPost();
 		
 		return $result;
 	}

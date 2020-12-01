@@ -50,12 +50,27 @@ try{
 	}
 	elseif ($action === 'biography') 
 	{
-		$appController->getbiography();
-	}
-	else
-	{
+		if ($action === 'biography') 
+		{
+			$appController->getBiography();
+		}
+		else
+		{
 		throw new Exception("Cette page n'existe pas");
+		}	
 	}
+	elseif ($action === 'dashboard') 
+	{
+		if (isset($_POST['email']) && isset($_POST['password'])) 
+		{
+			$appController->getDashboard($_POST['email'], $_POST['password']);
+		}
+		else
+		{
+		throw new Exception("Vous n'avez pas remplie tout les champs");
+		}
+	}
+	
 }
 
 
