@@ -45,7 +45,7 @@
 						{
 							?>
 							<li class="mb-3">
-								<a class="text-decoration-none link" href="index.php?action=dashboard">Dashboard</a>
+								<a class="text-decoration-none link" href="index.php?action=dashboard">Administration</a>
 							</li>
 							<li>
 								<a class="text-decoration-none link" href="index.php?action=disconnect">Déconnexion</a>

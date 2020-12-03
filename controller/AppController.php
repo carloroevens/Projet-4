@@ -36,6 +36,11 @@ class AppController
 		require ('view/waitcomments.php');
 	}
 
+	public function getWriteChapter()
+	{
+		require ('view/writechapter.php');
+	}
+
 	public function getConnect($email, $password)
 	{
 		$adminManager = new AdminManager();
@@ -60,6 +65,6 @@ class AppController
 	{
 		session_destroy();
 
-		header('location: index.php');
+		header('location: index.php?action=home');
 	}
 }

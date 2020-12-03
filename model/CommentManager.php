@@ -16,19 +16,19 @@ class CommentManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT author, content FROM comments WHERE status = ?');
+		$req = $db->prepare('SELECT id, author, content FROM comments WHERE status = ?');
 		$req->execute([$status]);
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
 		return $datas;
 	}
 
-	public function deleteComment($commentid)
+	public function deleteComment($idComment)
 	{
 		$db = $this->dbConnect();
 
 		$req = $db->prepare('DELETE FROM comments WHERE id = ?');
-		$req->execute([$commentid]);
+		$req->execute([$idComment]);
 	}
 
 	public function insertComment($id_chapter, $author, $content)
@@ -41,11 +41,11 @@ class CommentManager extends Manager
 		return $result;
 	}
 
-	public function updateComment($newContent, $idComment)
+	public function updateComment($newStatus, $idComment)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE comments SET content = ?, date_comment = NOW() WHERE id = ?');
-		$req->execute([$newContent, $idComment]);
+		$req = $db->prepare('UPDATE comments SET status = ? WHERE id = ?');
+		$req->execute([$newStatus, $idComment]);
 	}
 }

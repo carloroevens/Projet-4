@@ -42,7 +42,7 @@ class PostManager extends Manager
 		$req->execute(array($postId));
 	}
 
-	public function insertPost($title, $content)
+	public function addPost($title, $content)
 	{
 		$db = $this->dbConnect();
 

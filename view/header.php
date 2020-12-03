@@ -40,7 +40,7 @@
 							{
 								?>
 								<li class="nav-item active">
-									<a class="nav-link" href="index.php?action=dashboard">Dashboard</a>
+									<a class="nav-link" href="index.php?action=dashboard">Administration</a>
 								</li>
 								<li class="nav-item active">
 									<a class="nav-link" href="index.php?action=disconnect">Déconnexion</a>

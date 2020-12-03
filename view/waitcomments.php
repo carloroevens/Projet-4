@@ -32,8 +32,8 @@
 							  	<div class="card-body">
 							    	<p class="card-text"><?php echo htmlspecialchars($comment->content) ?></p>
 							    	<div class="text-right">
-							    		<a href="#" class="card-link text-success"><i class="fas fa-check"></i></a>
-							    		<a href="#" class="card-link text-danger"><i class="fas fa-times"></i></a>
+							    		<a href="index.php?action=modifystatus&amp;idComment=<?=$comment->id ?>" class="card-link text-success"><i class="fas fa-check fa-2x"></i></a>
+							    		<a href="index.php?action=deletecomment&amp;idComment=<?=$comment->id ?>" class="card-link text-danger"><i class="fas fa-times fa-2x"></i></a>
 							    	</div>
 							  	</div>
 							</div>

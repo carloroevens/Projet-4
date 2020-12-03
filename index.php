@@ -89,16 +89,65 @@ try{
 		}
 		else
 		{
-			throw new Exception("Vous n'avez pas les accés");
+			throw new Exception("Vous n'avez pas les accés pour l'administration");
 		}
 	}
 	elseif ($action === 'waitcomments') 
 	{
-		if ($action === 'waitcomments') 
+		if (isset($_SESSION['loger']))
 		{
 			$appController->getWaitComments();
 		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour les commentaires en attente");
+		}
 	}
+	elseif ($action === 'modifystatus') 
+	{
+		if (isset($_GET['idComment']) && isset($_SESSION['loger'])) 
+		{
+			$commentController->updateComment($_GET['idComment']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour modifier les commentaires en attente");
+		}
+	}
+	elseif ($action === 'deletecomment') 
+	{
+		if (isset($_GET['idComment']) && isset($_SESSION['loger'])) 
+		{
+			$commentController->deleteComment($_GET['idComment']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour suprimmer les commentaires");
+		}
+	}
+	elseif ($action === 'writechapter') 
+	{
+		if (isset($_SESSION['loger'])) 
+		{
+			$appController->getWriteChapter();
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour écrire un chapitre");
+		}
+	}
+	elseif ($action === 'addchapter') 
+	{
+		if (isset($_SESSION['loger']) && !empty($_POST['title']) && !empty($_POST['content'])) 
+		{
+			$postController->addChapter($_POST['title'], $_POST['content']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour envoyé un chapitre");
+		}
+	}
+
 }
 
 

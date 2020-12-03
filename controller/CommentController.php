@@ -14,4 +14,22 @@ class CommentController
 		}
 	}
 
+	public function updateComment($idComment)
+	{
+		$commentManager = new CommentManager();
+
+		$updateComment = $commentManager->updateComment('1', $idComment);
+
+		header('location: index.php?action=waitcomments');
+	}
+
+	public function deleteComment($idComment)
+	{
+		$commentManager = new CommentManager();
+
+		$deleteComment = $commentManager->deleteComment($idComment);
+
+		header('location: index.php?action=waitcomments');
+	}
+
 }

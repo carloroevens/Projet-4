@@ -29,7 +29,7 @@
 					<div class="col">
 						<div class="text-center bg-primary p-5 rounded-pill shadow">
 						<i class="fas fa-pencil-alt fa-3x m-2"></i><br/>
-						<a class="text-dark text-decoration-none stretched-link" href="">Écrire un chapitre</a>
+						<a class="text-dark text-decoration-none stretched-link" href="index.php?action=writechapter">Écrire un chapitre</a>
 						</div>
 					</div>
 				</div>
