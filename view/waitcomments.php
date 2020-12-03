@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>dashboard</title>
+		<title>waitcomments</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -16,43 +16,37 @@
 
 		<!--header-->
 
-		<header>
-			<?php require('header.php') ?>
-			
-		</header>
+		<?php require('header.php') ?>
 
-		<!--content-->
+		<!--waiting comments-->
 
-		<section>
-			<div class="container">
-				<div class="row p-3">
-					<div class="col">
-						<div class="text-center bg-primary p-5 rounded-pill shadow">
-						<i class="fas fa-pencil-alt fa-3x m-2"></i><br/>
-						<a class="text-dark text-decoration-none stretched-link" href="">Écrire un chapitre</a>
+		<div class="container">
+			<h1 class="text-center color-yellow m-5">Administration des commentaires</h1>
+					<?php foreach ($getWaitingComments = $commentManager->waitComments('0', 'CommentController') as $comment): ?>
+					<div class="row">
+						<div class="col">
+							<div class="card m-3">
+								<h5 class="card-header color-yellow">
+									<?php echo htmlspecialchars($comment->author) ?>
+								</h5>
+							  	<div class="card-body">
+							    	<p class="card-text"><?php echo htmlspecialchars($comment->content) ?></p>
+							    	<div class="text-right">
+							    		<a href="#" class="card-link text-success"><i class="fas fa-check"></i></a>
+							    		<a href="#" class="card-link text-danger"><i class="fas fa-times"></i></a>
+							    	</div>
+							  	</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-6">
-						<div class="bg-secondary m-2 text-center py-5 my-2 rounded shadow">
-							<i class="fas fa-edit fa-2x m-2"></i><br/>
-							<a class="text-dark text-decoration-none stretched-link" href="">Modifier les chapitres</a>
-						</div>
-					</div>
-					<div class="col-12 col-md-6">
-						<div class="bg-secondary m-2 text-center py-5 my-2 rounded shadow">
-							<i class="fas fa-comment-alt fa-2x m-2"></i><br/>
-							<a class="text-dark text-decoration-none stretched-link" href="index.php?action=waitcomments">Commentaires</a>
-						</div>
-					</div>
+
+					<?php endforeach; ?>
 				</div>
 			</div>
-			
-		</section>
+		</div>
 
 		<!--footer-->
-		
+
 		<?php require('footer.php') ?>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -14,7 +14,7 @@
 	</head>
 	<body>
 
-		<!--hearder-->
+		<!--header-->
 
 		<header class="hero">
 			<?php require('header.php') ?>

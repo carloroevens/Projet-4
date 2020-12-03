@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 class AppController
 {
 	public function getHomePage()
@@ -21,7 +24,19 @@ class AppController
 		require ('view/biography.php');
 	}
 
-	public function getDashboard($email, $password)
+	public function getDashboard()
+	{
+		require ('view/dashboard.php');
+	}
+
+	public function getWaitComments()
+	{
+		$commentManager = new CommentManager();
+		
+		require ('view/waitcomments.php');
+	}
+
+	public function getConnect($email, $password)
 	{
 		$adminManager = new AdminManager();
 
@@ -30,11 +45,21 @@ class AppController
 
 		if ($email === $log['email'] && $hashPassword === $log['password']) 
 		{
+			$_SESSION['email'] = $email;
+			$_SESSION['hashpassword'] = $hashPassword;
+			$_SESSION['loger'] = 'yes';
 			require ('view/dashboard.php');
 		}
 		else
 		{
 			throw new Exception("Identifiant incorrecte !",);
 		}
+	}
+
+	public function disconnect()
+	{
+		session_destroy();
+
+		header('location: index.php');
 	}
 }

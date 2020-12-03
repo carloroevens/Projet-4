@@ -10,13 +10,13 @@ if (isset($_GET['action']))
 	$action = 'home';
 }
 
-//initialisation des objects
+//initialization of objects
 $appController = new AppController();
 $postController = new PostController();
 $commentController = new CommentController();
 
 try{
-	if ($action === 'home') 
+	if ($action === 'home')
 	{
 		$appController->getHomePage();
 	}
@@ -56,21 +56,49 @@ try{
 		}
 		else
 		{
-		throw new Exception("Cette page n'existe pas");
+			throw new Exception("Cette page n'existe pas");
 		}	
 	}
-	elseif ($action === 'dashboard') 
+	elseif ($action === 'connect') 
 	{
 		if (isset($_POST['email']) && isset($_POST['password'])) 
 		{
-			$appController->getDashboard($_POST['email'], $_POST['password']);
+			$appController->getConnect($_POST['email'], $_POST['password']);
 		}
 		else
 		{
-		throw new Exception("Vous n'avez pas remplie tout les champs");
+			throw new Exception("Vous n'avez pas remplie tout les champs");
 		}
 	}
-	
+	elseif ($action === 'disconnect') 
+	{
+		if (isset($_SESSION['loger'])) 
+		{
+			$appController->disconnect();
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter");
+		}
+	}
+	elseif ($action === 'dashboard') 
+	{
+		if (isset($_SESSION['loger'])) 
+		{
+			$appController->getDashboard();
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés");
+		}
+	}
+	elseif ($action === 'waitcomments') 
+	{
+		if ($action === 'waitcomments') 
+		{
+			$appController->getWaitComments();
+		}
+	}
 }
 
 

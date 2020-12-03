@@ -13,7 +13,7 @@
 	</head>
 	<body>
 
-		<!--herder-->
+		<!--header-->
 
 		<?php require('header.php') ?>
 
@@ -47,11 +47,11 @@
 				</div>
 			</div>
 
-		<!--list of comment-->
+		<!--list of comments-->
 
 			<div class="row">
 				<div class="col">
-					<?php foreach ($getCommentList = $commentManager->getComments($_GET['idChapter'], 'CommentController') as $comment): ?>
+					<?php foreach ($getCommentList = $commentManager->getComments($_GET['idChapter'], '1', 'CommentController') as $comment): ?>
 					
 					<div class="media">
 						<div class="media-body">

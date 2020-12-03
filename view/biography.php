@@ -13,7 +13,7 @@
 	</head>
 	<body>
 
-		<!--herder-->
+		<!--header-->
 
 		<?php require('header.php') ?>
 
@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h1 class="display-3 text-center mb-5 color-yellow">biographie</h1>
+					<h1 class="display-3 text-center mb-5 color-yellow">Biographie</h1>
 						<img src="public/img/portrait.jpg" class="rounded float-left p-5" alt="portrait de Jean Forteroche">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mattis semper. Praesent quis turpis vitae urna vehicula convallis eu dapibus risus. Etiam tincidunt mauris ut felis malesuada, eget dictum odio faucibus. Mauris dignissim lacus eu venenatis tempus. Fusce sit amet venenatis elit. Fusce semper tortor eget lobortis faucibus. Mauris ut consectetur dui. Cras quis lectus ex. Sed suscipit commodo eros at commodo. Etiam pharetra pulvinar lacus eget tincidunt. Donec interdum neque elit, et efficitur libero rhoncus eu. Cras malesuada elit elementum, vehicula augue at, elementum sem. Fusce faucibus, sapien eget porttitor ultricies, lectus enim rutrum justo, vitae pellentesque justo sapien ut nunc. Phasellus faucibus sapien eu ante maximus, quis fringilla felis tempus.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mattis semper. Praesent quis turpis vitae urna vehicula convallis eu dapibus risus. Etiam tincidunt mauris ut felis malesuada, eget dictum odio faucibus. Mauris dignissim lacus eu venenatis tempus. Fusce sit amet venenatis elit. Fusce semper tortor eget lobortis faucibus. Mauris ut consectetur dui. Cras quis lectus ex. Sed suscipit commodo eros at commodo. Etiam pharetra pulvinar lacus eget tincidunt. Donec interdum neque elit, et efficitur libero rhoncus eu. Cras malesuada elit elementum, vehicula augue at, elementum sem. Fusce faucibus, sapien eget porttitor ultricies, lectus enim rutrum justo, vitae pellentesque justo sapien ut nunc. Phasellus faucibus sapien eu ante maximus, quis fringilla felis tempus.</p>

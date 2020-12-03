@@ -1,12 +1,23 @@
 <?php
 class CommentManager extends Manager
 {
-	public function getComments($postid, $class)
+	public function getComments($postid, $status, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") AS date_comment FROM comments WHERE id_chapter = ?');
-		$req->execute([$postid]);
+		$req = $db->prepare('SELECT *, DATE_FORMAT(date_comment, "le %d/%m/%y à %Hh%imin%ss") AS date_comment FROM comments WHERE id_chapter = ? AND status = ?');
+		$req->execute([$postid, $status]);
+		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
+
+		return $datas;
+	}
+
+	public function waitComments($status, $class)
+	{
+		$db = $this->dbConnect();
+
+		$req = $db->prepare('SELECT author, content FROM comments WHERE status = ?');
+		$req->execute([$status]);
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
 		return $datas;
@@ -24,7 +35,7 @@ class CommentManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO comments (id_chapter, author, content, date_comment) VALUES (?, ?, ?, NOW())');
+		$req = $db->prepare('INSERT INTO comments (id_chapter, status, author, content, date_comment) VALUES (?, 0, ?, ?, NOW())');
 		$result = $req->execute([$id_chapter, $author, $content]);
 
 		return $result;
