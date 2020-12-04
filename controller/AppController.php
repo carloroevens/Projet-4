@@ -41,6 +41,11 @@ class AppController
 		require ('view/writechapter.php');
 	}
 
+	public function getModifyChapter()
+	{
+		require ('view/modifychapter.php');
+	}
+
 	public function getConnect($email, $password)
 	{
 		$adminManager = new AdminManager();

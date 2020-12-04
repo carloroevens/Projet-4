@@ -144,10 +144,20 @@ try{
 		}
 		else
 		{
-			throw new Exception("Vous n'avez pas les accés pour envoyé un chapitre");
+			throw new Exception("Vous n'avez pas les accés pour envoyer un chapitre");
 		}
 	}
-
+	elseif ($action === 'modifychapter') 
+	{
+		if (isset($_SESSION['loger'])) 
+		{
+			$appController->getModifyChapter();
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour modifier les chapitres");
+		}
+	}
 }
 
 
