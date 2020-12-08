@@ -15,17 +15,20 @@
 	<body>
 
 		<!--header-->
-
+		
+		<?php require('header.php') ?>
+		
 		<header class="hero">
-			<?php require('header.php') ?>
 			<div class="container">
 				<div class="row">
-					<div class="col">
-						<h1 class="text-center text-white pt-5">Jean Forteroche</h1>
-						<blockquote class="blockquote text-center">
-						 	<p class="mb-0 mt-4 text-white-50">La vraie vie est vécue lorsque de minuscules changements se produisent.</p>
-							<footer class="blockquote-footer quote-author"><em>Jean Forteroche</em></footer>
-						</blockquote>
+					<div class="col mt-5">
+						<div class="mt-5">
+							<h1 class="text-center text-white pt-5">Jean Forteroche</h1>
+							<blockquote class="blockquote text-center">
+						 		<p class="mb-0 mt-4 text-white-50">La vraie vie est vécue lorsque de minuscules changements se produisent.</p>
+								<footer class="blockquote-footer quote-author"><em>Jean Forteroche</em></footer>
+							</blockquote>
+						</div>
 					</div>
 				</div>
 			</div>

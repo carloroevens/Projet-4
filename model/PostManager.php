@@ -5,7 +5,8 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter');
+		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter LIMIT 0, 4');
+		
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
 		return $datas;

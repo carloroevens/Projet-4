@@ -23,9 +23,9 @@
 		<!--waiting comments-->
 
 		<div class="container">
-			<div class="row">
+			<div class="row m-5">
 				<div class="col">
-					<h1 class="text-center mb-5 color-yellow">Nouveaux chapitre</h1>
+					<h1 class="text-center color-yellow">Nouveaux chapitre</h1>
 					<form method="post" action="index.php?action=addchapter">
 						<div class="form-group">
 							<label class="h4" for="namechapter">Nom du chapitre</label>

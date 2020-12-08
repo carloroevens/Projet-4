@@ -15,10 +15,12 @@
 
 		<!--header-->
 
+		
 		<?php require('header.php') ?>
+		
 
 		<!--chapter-->
-		<div class="container">
+		<div class="container mt-5">
 			<div class="row mb-5">
 				<div class="col">
 					<h1 class="text-center color-yellow display-3"><?= $post->title; ?></h1>

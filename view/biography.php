@@ -15,11 +15,13 @@
 
 		<!--header-->
 
+		
 		<?php require('header.php') ?>
+		
 
 		<!--biography-->
 
-		<div class="container">
+		<div class="container mt-5">
 			<div class="row">
 				<div class="col">
 					<h1 class="display-3 text-center mb-5 color-yellow">Biographie</h1>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>writechapter</title>
+		<title>modifychapter</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -20,26 +20,31 @@
 
 		<?php require('header.php') ?>
 
-		<!--waiting comments-->
-
+		<!--chapter to modify-->
 		<div class="container">
+			<div class="row m-5">
+				<div class="col">
+					<h1 class="text-center color-yellow">Modifier un chapitre</h1>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col">
-					<h1 class="text-center mb-5 color-yellow">Nouveaux chapitre</h1>
-					<form method="post" action="index.php?action=addchapter">
+					<form method="post" action="index.php?action=updatechapter&amp;id=<?= $post->id ?>">
 						<div class="form-group">
 							<label class="h4" for="namechapter">Nom du chapitre</label>
-							<input class="form-control w-50" type="text" id="namechapter" name="title"></input>
+							<input class="form-control w-50" type="text" id="namechapter" name="title" value="<?= $post->title; ?>"></input>
 						</div>
-						<textarea name="content"></textarea>
+						<textarea name="content">
+							<?= $post->content; ?>
+						</textarea>
 						<div class="text-right my-4">
-							<button class="btn btn-primary" type="submit">Enregistrer</button>
+							<button class="btn btn-primary" type="submit">Modifier</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-
+		
 		<!--footer-->
 
 		<?php require('footer.php') ?>

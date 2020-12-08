@@ -147,15 +147,48 @@ try{
 			throw new Exception("Vous n'avez pas les accés pour envoyer un chapitre");
 		}
 	}
-	elseif ($action === 'modifychapter') 
+	elseif ($action === 'listmodifychapter') 
 	{
 		if (isset($_SESSION['loger'])) 
 		{
-			$appController->getModifyChapter();
+			$appController->getListModifyChapter();
 		}
 		else
 		{
-			throw new Exception("Vous n'avez pas les accés pour modifier les chapitres");
+			throw new Exception("Vous n'avez pas les accés pour accéder à la liste des chapitres à modifier");
+		}
+	}
+	elseif ($action === 'deletechapter') 
+	{
+		if (isset($_SESSION['loger']) && isset($_GET['chapterid'])) 
+		{
+			$postController->deleteChapter($_GET['chapterid']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour supprimer un chapitre");
+		}
+	}
+	elseif ($action === 'modifychapter') 
+	{
+		if (isset($_SESSION['loger']) && isset($_GET['chapterid'])) 
+		{
+			$appController->getModifyChapter($_GET['chapterid']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour la page de modification des chapitres");
+		}
+	}
+	elseif ($action === 'updatechapter') 
+	{
+		if (isset($_SESSION['loger']) && isset($_POST['title']) && isset($_POST['content']) && isset($_GET['id'])) 
+		{
+			$postController->updateChapter($_POST['title'], $_POST['content'], $_GET['id']);
+		}
+		else
+		{
+			throw new Exception("Vous n'avez pas les accés pour modifier un chapitre");
 		}
 	}
 }

@@ -41,8 +41,18 @@ class AppController
 		require ('view/writechapter.php');
 	}
 
+	public function getListModifyChapter()
+	{
+		$postManager = new PostManager();
+		
+		require ('view/listmodifychapter.php');
+	}
+
 	public function getModifyChapter()
 	{
+		$postManager = new PostManager();
+
+		$post = $postManager->getSinglePost($_GET['chapterid'], 'PostController');
 		require ('view/modifychapter.php');
 	}
 

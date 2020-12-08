@@ -28,4 +28,22 @@ class PostController
 
 		header('location: index.php?action=writechapter');
 	}
+
+	public function deleteChapter($postId)
+	{
+		$postManager = new PostManager();
+
+		$postManager->deletePost($postId);
+
+		header('location: index.php?action=listmodifychapter');
+	}
+
+	public function updateChapter($title, $content, $id)
+	{
+		$postManager = new PostManager();
+
+		$postManager->updatePost($title, $content, $id);
+
+		header('location: index.php?action=listmodifychapter');
+	}
 }
