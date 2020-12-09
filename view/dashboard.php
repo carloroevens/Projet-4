@@ -25,7 +25,7 @@
 
 		<section>
 			<div class="container">
-				<div class="row p-3">
+				<div class="row p-3 mt-5">
 					<div class="col">
 						<div class="text-center bg-primary p-5 rounded-pill shadow">
 						<i class="fas fa-pencil-alt fa-3x m-2"></i><br/>

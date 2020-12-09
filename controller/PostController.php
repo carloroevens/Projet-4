@@ -20,11 +20,11 @@ class PostController
 		return substr($this->content, 0, 300) . '...';
 	}
 
-	public function addChapter($title, $content)
+	public function addChapter($title, $content, $id)
 	{
 		$postManager = new PostManager();
 
-		$postManager->addPost($title, $content);
+		$postManager->addPost($title, $content, $id);
 
 		header('location: index.php?action=writechapter');
 	}
@@ -38,11 +38,11 @@ class PostController
 		header('location: index.php?action=listmodifychapter');
 	}
 
-	public function updateChapter($title, $content, $id)
+	public function updateChapter($title, $content, $lastid, $newid)
 	{
 		$postManager = new PostManager();
 
-		$postManager->updatePost($title, $content, $id);
+		$postManager->updatePost($title, $content, $lastid, $newid);
 
 		header('location: index.php?action=listmodifychapter');
 	}

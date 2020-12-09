@@ -24,15 +24,19 @@
 		<div class="container">
 			<div class="row m-5">
 				<div class="col">
-					<h1 class="text-center color-yellow">Modifier un chapitre</h1>
+					<h1 class="display-3 text-center color-yellow">Modifier un chapitre</h1>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<form method="post" action="index.php?action=updatechapter&amp;id=<?= $post->id ?>">
+					<form method="post" action="index.php?action=updatechapter&amp;lastid=<?= $post->id ?>">
 						<div class="form-group">
 							<label class="h4" for="namechapter">Nom du chapitre</label>
 							<input class="form-control w-50" type="text" id="namechapter" name="title" value="<?= $post->title; ?>"></input>
+						</div>
+						<div class="form-group">
+							<label class="h6" for="idchapter">Chapitre n°</label>
+							<input class="form-control w-25" type="text" id="idchapter" name="newid" value="<?= $post->id; ?>"></input>
 						</div>
 						<textarea name="content">
 							<?= $post->content; ?>

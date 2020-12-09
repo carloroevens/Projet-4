@@ -138,13 +138,13 @@ try{
 	}
 	elseif ($action === 'addchapter') 
 	{
-		if (isset($_SESSION['loger']) && !empty($_POST['title']) && !empty($_POST['content'])) 
+		if (isset($_SESSION['loger']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['id'])) 
 		{
-			$postController->addChapter($_POST['title'], $_POST['content']);
+			$postController->addChapter($_POST['title'], $_POST['content'], $_POST['id']);
 		}
 		else
 		{
-			throw new Exception("Vous n'avez pas les accés pour envoyer un chapitre");
+			throw new Exception("Vous n'avez pas les accés pour envoyer un chapitre ou vous n'avez pas remplie tout les champs");
 		}
 	}
 	elseif ($action === 'listmodifychapter') 
@@ -182,14 +182,18 @@ try{
 	}
 	elseif ($action === 'updatechapter') 
 	{
-		if (isset($_SESSION['loger']) && isset($_POST['title']) && isset($_POST['content']) && isset($_GET['id'])) 
+		if (isset($_SESSION['loger']) && isset($_POST['title']) && isset($_POST['content']) && isset($_GET['lastid']) && isset($_POST['newid'])) 
 		{
-			$postController->updateChapter($_POST['title'], $_POST['content'], $_GET['id']);
+			$postController->updateChapter($_POST['title'], $_POST['content'], $_GET['lastid'], $_POST['newid']);
 		}
 		else
 		{
 			throw new Exception("Vous n'avez pas les accés pour modifier un chapitre");
 		}
+	}
+	elseif ($action === 'chapter') 
+	{
+		$appController->getChapter();
 	}
 }
 

@@ -9,7 +9,7 @@ tinymce.init(
           "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
         ],
        
-        toolbar1: "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect | hr removeformat | charmap emoticons",
+        toolbar1: "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect | hr removeformat | charmap",
         toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor | print fullscreen",
        
         menubar: false,

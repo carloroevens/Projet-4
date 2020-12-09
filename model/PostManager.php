@@ -5,7 +5,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter LIMIT 0, 4');
+		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter /*LIMIT 0, 4*/');
 		
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 
@@ -43,19 +43,19 @@ class PostManager extends Manager
 		$req->execute(array($postId));
 	}
 
-	public function addPost($title, $content)
+	public function addPost($title, $content, $id)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO chapter (title, content, date_chapter) VALUES (?, ?, NOW())');
-		$req->execute([$title, $content]);
+		$req = $db->prepare('INSERT INTO chapter (id, title, content, date_chapter) VALUES (?, ?, ?, NOW())');
+		$req->execute([$id, $title, $content]);
 	}
 
-	public function updatePost($title, $content, $id)
+	public function updatePost($title, $content, $lastid, $newid)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE chapter SET title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
-		$req->execute([$title, $content, $id]);
+		$req = $db->prepare('UPDATE chapter SET id = ?, title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
+		$req->execute([$newid, $title, $content, $lastid]);
 	}
 }

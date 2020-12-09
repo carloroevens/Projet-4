@@ -21,7 +21,7 @@
 		<!--waiting comments-->
 
 		<div class="container">
-			<h1 class="text-center color-yellow m-5">Administration des commentaires</h1>
+			<h1 class="display-3 text-center color-yellow m-5">Administration des commentaires</h1>
 					<?php foreach ($getWaitingComments = $commentManager->waitComments('0', 'CommentController') as $comment): ?>
 					<div class="row">
 						<div class="col">

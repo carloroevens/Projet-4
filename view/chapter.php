@@ -22,26 +22,19 @@
 		<div class="container mt-5">
 			<div class="row">
 				<div class="col">
-					<h1 class="display-3 color-yellow text-center mb-5">Modifier et suprimer les chapitres</h1>
+					<h1 class=" display-3 color-yellow text-center mb-5">Chapitres</h1>
 				</div>
 			</div>
 			<div class="row">
 				<?php foreach ($postManager->getPosts('PostController') as $posts): ?>
 				
-					<div class="col-12 col-md-6">
-						<div class="card shadow mb-5 mb-md-4">
+					<div class="col-12 col-md-6 mb-5">
+						<div class="card h-100 overflow-hidden shadow mb-5 mb-md-4">
 							<div class="card-body">
-								<h5 class="card-title text-center"><a class=" text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
+								<h5 class="card-title text-center"><a class="stretched-link text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
 							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id; ?></h6>
 							    <p class="card-text"><?= $posts->getContent(); ?></p>
-							    <div class="text-right">
-							    	<button class="btn btn-info">
-							    		<a class="text-decoration-none text-dark" href="index.php?action=modifychapter&amp;chapterid=<?= $posts->id; ?>">Modifier</a>
-							    	</button>
-							    	<button class="btn btn-danger">
-							    		<a class="text-decoration-none text-dark" href="index.php?action=deletechapter&amp;chapterid=<?= $posts->id; ?>">Suprimer</a>
-							    	</button>
-							    </div>
+							    <p class="card-text text-right mt-3"><?= $posts->date_chapter; ?></p>
 							</div>
 						</div>
 					</div>

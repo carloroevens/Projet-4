@@ -21,6 +21,24 @@
 								<li class="nav-item active">
 							    	<a class="nav-link" href="index.php?action=biography">Biographie</a>
 								</li>
+
+								<li class="nav-item">
+							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
+								</li>
+								<?php
+							}elseif (isset($_GET['action']) && $_GET['action'] === 'chapter') {
+								?>
+								<li class="nav-item">
+							    	<a class="nav-link" href="index.php?action=home">Accueil</a>
+								</li>
+							
+								<li class="nav-item">
+							    	<a class="nav-link" href="index.php?action=biography">Biographie</a>
+								</li>
+
+								<li class="nav-item active">
+							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
+								</li>
 								<?php
 							}else {
 								?>
@@ -30,6 +48,10 @@
 							
 								<li class="nav-item">
 							    	<a class="nav-link" href="index.php?action=biography">Biographie</a>
+								</li>
+
+								<li class="nav-item">
+							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
 								</li>
 								<?php
 							}

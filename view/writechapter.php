@@ -25,11 +25,15 @@
 		<div class="container">
 			<div class="row m-5">
 				<div class="col">
-					<h1 class="text-center color-yellow">Nouveaux chapitre</h1>
+					<h1 class="display-3 text-center color-yellow mb-5">Nouveaux chapitre</h1>
 					<form method="post" action="index.php?action=addchapter">
 						<div class="form-group">
 							<label class="h4" for="namechapter">Nom du chapitre</label>
 							<input class="form-control w-50" type="text" id="namechapter" name="title"></input>
+						</div>
+						<div class="form-group">
+							<label class="h6" for="idchapter">Chapitre n°</label>
+							<input class="form-control w-25" type="text" id="idchapter" name="id"></input>
 						</div>
 						<textarea name="content"></textarea>
 						<div class="text-right my-4">
