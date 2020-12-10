@@ -1,11 +1,11 @@
 <?php
 class PostManager extends Manager
 {
-	public function getPosts($class)
+	public function getPosts($nbparpage, $page, $class)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter /*LIMIT 0, 4*/');
+		$req = $db->query('SELECT *, DATE_FORMAT(date_chapter, "Publié le %d/%m/%y") AS date_chapter FROM chapter LIMIT '. $page . "," . $nbparpage);
 		
 		$datas = $req->fetchAll(PDO::FETCH_CLASS, $class);
 

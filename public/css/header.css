@@ -52,3 +52,8 @@
 	opacity: 100%;
 	color: white;
 }
+
+.modal-backdrop
+{
+	z-index: 1;
+}

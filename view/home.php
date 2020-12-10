@@ -66,7 +66,7 @@
 
 				<div class="row">
 
-				<?php foreach ($postManager->getPosts('PostController') as $posts): ?>
+				<?php foreach ($postManager->getPosts(4, 0, 'PostController') as $posts): ?>
 				
 					<div class="col-12 col-md-6">
 						<div class="card shadow mb-5 mb-md-4">

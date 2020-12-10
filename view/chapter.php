@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach ($postManager->getPosts('PostController') as $posts): ?>
+				<?php foreach ($postManager->getPosts(10, 0, 'PostController') as $posts): ?>
 				
 					<div class="col-12 col-md-6 mb-5">
 						<div class="card h-100 overflow-hidden shadow mb-5 mb-md-4">
