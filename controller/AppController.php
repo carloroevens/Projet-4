@@ -41,13 +41,6 @@ class AppController
 		require ('view/writechapter.php');
 	}
 
-	public function getListModifyChapter()
-	{
-		$postManager = new PostManager();
-		
-		require ('view/listmodifychapter.php');
-	}
-
 	public function getModifyChapter()
 	{
 		$postManager = new PostManager();
@@ -72,9 +65,30 @@ class AppController
 			$page = 1;
 		}
 
-		$currentPage = (($page-1)*$parPage);
-
+		$currentPage = (($page-1)*$parPage); 
+		
 		require ('view/chapter.php');
+	}
+
+	public function getListModifyChapter($pageNumber)
+	{
+		$postManager = new PostManager();
+		$nombreChapter = $postManager->getNumberPost();
+		$parPage = 8;
+		$nombrePage = ceil($nombreChapter / $parPage);
+
+		if (isset($pageNumber) && $pageNumber > 0 && $pageNumber <= $nombrePage) 
+		{
+			$page = $pageNumber;
+		}
+		else
+		{
+			$page = 1;
+		}
+
+		$currentPage = (($page-1)*$parPage); 
+		
+		require ('view/listmodifychapter.php');
 	}
 
 	public function getConnect($email, $password)

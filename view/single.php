@@ -24,7 +24,7 @@
 			<div class="row mb-5">
 				<div class="col">
 					<h1 class="text-center color-yellow display-3"><?= $post->title; ?></h1>
-					<p class="h5 mb-4">Chapitre <?= $post->id; ?></p>
+					<p class="h5 mb-4">Chapitre <?= $post->id_chapter; ?></p>
 					<p class="mb-4"><?= $post->content; ?></p>
 					<p class="text-muted"><?= $post->date_chapter; ?></p>
 				</div>
@@ -59,7 +59,8 @@
 						<div class="media-body">
 							<h5 class="mt-0"><?php echo htmlspecialchars($comment->author) ?></h5>
 							<p class="text-muted"><?= $comment->date_comment ?></p>
-					    	<p class="lead"><?php echo htmlspecialchars($comment->content) ?></p>
+					    	<p class="lead"><?php echo htmlspecialchars($comment->content) ?> </p>
+					    	<a class="btn btn-secondary mb-3" href="index.php?action=signalcomment&amp;idcomment=<?= $comment->id ?>&amp;idchapter=<?= $post->id; ?>">Signaler le commentaire</a>
 						</div>
 					</div>
 

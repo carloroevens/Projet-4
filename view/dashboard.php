@@ -37,7 +37,7 @@
 					<div class="col-12 col-md-6">
 						<div class="bg-secondary m-2 text-center py-5 my-2 rounded shadow">
 							<i class="fas fa-edit fa-2x m-2"></i><br/>
-							<a class="text-dark text-decoration-none stretched-link" href="index.php?action=listmodifychapter">Modifier les chapitres</a>
+							<a class="text-dark text-decoration-none stretched-link" href="index.php?action=listmodifychapter&amp;pagenumber=1">Modifier les chapitres</a>
 						</div>
 					</div>
 					<div class="col-12 col-md-6">

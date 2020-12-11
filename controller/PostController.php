@@ -35,7 +35,7 @@ class PostController
 
 		$postManager->deletePost($postId);
 
-		header('location: index.php?action=listmodifychapter');
+		header('location: index.php?action=listmodifychapter&pagenumber=1');
 	}
 
 	public function updateChapter($title, $content, $lastid, $newid)
@@ -44,6 +44,6 @@ class PostController
 
 		$postManager->updatePost($title, $content, $lastid, $newid);
 
-		header('location: index.php?action=listmodifychapter');
+		header('location: index.php?action=listmodifychapter&pagenumber=1');
 	}
 }

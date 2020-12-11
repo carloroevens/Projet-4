@@ -36,7 +36,7 @@
 						</div>
 						<div class="form-group">
 							<label class="h6" for="idchapter">Chapitre n°</label>
-							<input class="form-control w-25" type="text" id="idchapter" name="newid" value="<?= $post->id; ?>"></input>
+							<input class="form-control w-25" type="text" id="idchapter" name="newid" value="<?= $post->id_chapter; ?>"></input>
 						</div>
 						<textarea name="content">
 							<?= $post->content; ?>

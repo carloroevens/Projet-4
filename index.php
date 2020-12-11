@@ -149,9 +149,9 @@ try{
 	}
 	elseif ($action === 'listmodifychapter') 
 	{
-		if (isset($_SESSION['loger'])) 
+		if (isset($_SESSION['loger']) && isset($_GET['pagenumber'])) 
 		{
-			$appController->getListModifyChapter();
+			$appController->getListModifyChapter($_GET['pagenumber']);
 		}
 		else
 		{
@@ -196,6 +196,21 @@ try{
 		if (isset($_GET['pagenumber'])) 
 		{
 			$appController->getChapter($_GET['pagenumber']);
+		}
+		else
+		{
+			throw new Exception("Cette page n'existe pas");
+		}
+	}
+	elseif ($action === 'signalcomment') 
+	{
+		if (isset($_GET['idcomment']) && isset($_GET['idchapter'])) 
+		{
+			$commentController->signalComment($_GET['idcomment'], $_GET['idchapter']);
+		}
+		else
+		{
+			throw new Exception("vous ne pouvez pas signaler ce commentaire");
 		}
 	}
 }

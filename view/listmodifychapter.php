@@ -26,13 +26,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach ($postManager->getPosts('PostController') as $posts): ?>
+				<?php foreach ($postManager->getPosts($currentPage, $parPage, 'PostController') as $posts): ?>
 				
 					<div class="col-12 col-md-6">
 						<div class="card shadow mb-5 mb-md-4">
 							<div class="card-body">
 								<h5 class="card-title text-center"><a class=" text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
-							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id; ?></h6>
+							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id_chapter; ?></h6>
 							    <p class="card-text"><?= $posts->getContent(); ?></p>
 							    <div class="text-right">
 							    	<button class="btn btn-info">
@@ -47,6 +47,27 @@
 					</div>
 				
 				<?php endforeach; ?>
+			</div>
+
+			<div class="row my-3">
+				<div class="col">
+					<nav>
+					  	<ul class="pagination justify-content-center">
+					    	<?php for ($i=1; $i <= $nombrePage; $i++) { 
+								if ($i == $page) {
+									?>
+									<li class="page-item"><a class="page-link" href="index.php?action=listmodifychapter&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+									<?php
+								} else {
+									?>
+									<li class="page-item"><a class="page-link" href="index.php?action=listmodifychapter&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+									<?php
+								}
+							}
+							?>
+					  	</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 

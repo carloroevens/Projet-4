@@ -72,7 +72,7 @@
 						<div class="card shadow mb-5 mb-md-4">
 							<div class="card-body">
 								<h5 class="card-title text-center"><a class="stretched-link text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
-							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id; ?></h6>
+							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id_chapter; ?></h6>
 							    <p class="card-text"><?= $posts->getContent(); ?></p>
 							    <p class="card-text text-right"><?= $posts->date_chapter; ?></p>
 							</div>

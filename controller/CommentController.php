@@ -23,6 +23,15 @@ class CommentController
 		header('location: index.php?action=waitcomments');
 	}
 
+	public function signalComment($idComment, $idChapter)
+	{
+		$commentManager = new CommentManager();
+
+		$signalComment = $commentManager->updateComment('0', $idComment);
+
+		header('location: index.php?action=single&idChapter=' . $idChapter);
+	}
+
 	public function deleteComment($idComment)
 	{
 		$commentManager = new CommentManager();

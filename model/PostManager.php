@@ -47,7 +47,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO chapter (id, title, content, date_chapter) VALUES (?, ?, ?, NOW())');
+		$req = $db->prepare('INSERT INTO chapter (id_chapter, title, content, date_chapter) VALUES (?, ?, ?, NOW())');
 		$req->execute([$id, $title, $content]);
 	}
 
@@ -55,7 +55,7 @@ class PostManager extends Manager
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE chapter SET id = ?, title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
+		$req = $db->prepare('UPDATE chapter SET id_chapter = ?, title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
 		$req->execute([$newid, $title, $content, $lastid]);
 	}
 }
