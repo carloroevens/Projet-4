@@ -1,7 +1,7 @@
 <?php
 class PostManager extends Manager
 {
-	public function getPosts($nbparpage, $page, $class)
+	public function getPosts($page, $nbparpage, $class)
 	{
 		$db = $this->dbConnect();
 

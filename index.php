@@ -193,7 +193,10 @@ try{
 	}
 	elseif ($action === 'chapter') 
 	{
-		$appController->getChapter();
+		if (isset($_GET['pagenumber'])) 
+		{
+			$appController->getChapter($_GET['pagenumber']);
+		}
 	}
 }
 

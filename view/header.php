@@ -25,7 +25,7 @@
 								</li>
 
 								<li class="nav-item">
-							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
+							    	<a class="nav-link" href="index.php?action=chapter&amp;pagenumber=1">Chapitres</a>
 								</li>
 								<?php
 							}elseif (isset($_GET['action']) && $_GET['action'] === 'chapter') {
@@ -39,7 +39,7 @@
 								</li>
 
 								<li class="nav-item active">
-							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
+							    	<a class="nav-link" href="index.php?action=chapter&amp;pagenumber=1">Chapitres</a>
 								</li>
 								<?php
 							}else {
@@ -53,7 +53,7 @@
 								</li>
 
 								<li class="nav-item">
-							    	<a class="nav-link" href="index.php?action=chapter">Chapitres</a>
+							    	<a class="nav-link" href="index.php?action=chapter&amp;pagenumber=1">Chapitres</a>
 								</li>
 								<?php
 							}

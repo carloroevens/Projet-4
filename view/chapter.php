@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach ($postManager->getPosts(10, 0, 'PostController') as $posts): ?>
+				<?php foreach ($postManager->getPosts($currentPage, $parPage, 'PostController') as $posts): ?>
 				
 					<div class="col-12 col-md-6 mb-5">
 						<div class="card h-100 overflow-hidden shadow mb-5 mb-md-4">
@@ -38,8 +38,28 @@
 							</div>
 						</div>
 					</div>
-				
 				<?php endforeach; ?>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<nav>
+					  	<ul class="pagination justify-content-center">
+					    	<?php for ($i=1; $i <= $nombrePage; $i++) { 
+								if ($i == $page) {
+									?>
+									<li class="page-item"><a class="page-link" href="index.php?action=chapter&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+									<?php
+								} else {
+									?>
+									<li class="page-item"><a class="page-link" href="index.php?action=chapter&amp;pagenumber=<?= $i ?>"><?= $i ?></a></li>
+									<?php
+								}
+							}
+							?>
+					  	</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 

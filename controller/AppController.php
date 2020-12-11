@@ -56,9 +56,23 @@ class AppController
 		require ('view/modifychapter.php');
 	}
 
-	public function getChapter()
+	public function getChapter($pageNumber)
 	{
 		$postManager = new PostManager();
+		$nombreChapter = $postManager->getNumberPost();
+		$parPage = 8;
+		$nombrePage = ceil($nombreChapter / $parPage);
+
+		if (isset($pageNumber) && $pageNumber > 0 && $pageNumber <= $nombrePage) 
+		{
+			$page = $pageNumber;
+		}
+		else
+		{
+			$page = 1;
+		}
+
+		$currentPage = (($page-1)*$parPage);
 
 		require ('view/chapter.php');
 	}
