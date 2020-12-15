@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class sert à gérer les fonctionnalité en rapport avec la base de données pour les posts
+*/
 class PostController
 {
 	public function number_Post()

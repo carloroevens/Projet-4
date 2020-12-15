@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class sert à gérer les fonctionnalité en rapport avec la base de données pour les commentaires 
+*/
 class CommentController
 {
 	public function addComment($id_chapter, $author, $content)

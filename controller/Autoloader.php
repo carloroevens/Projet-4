@@ -1,4 +1,7 @@
 <?php
+/* 
+*	Comme sont nom l'indique cette class sert à auloloader toute les class quand elle sont appelé
+*/
 class Autoloader {
 
 	static function register() {

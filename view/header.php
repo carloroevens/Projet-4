@@ -6,7 +6,7 @@
 			<div class="row p-2">
 				<nav class="col navbar navbar-expand-lg navbar-dark">
 					<a class="navbar-brand" href="index.php?action=home">
-						Jean Forteroche
+						<img class="logo" alt="logo Jean Forteroche" src="public/img/logo-header.png">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#navbarContent'>
 						<span class="navbar-toggler-icon"></span>

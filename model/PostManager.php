@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class s'occupe des fonction SQL pour les posts
+*/
 class PostManager extends Manager
 {
 	public function getPosts($page, $nbparpage, $class)

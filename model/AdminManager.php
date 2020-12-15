@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class récupére les logs pour la vérification de la connection de l'admin
+*/
 class AdminManager extends Manager
 {
 	public function getLog()

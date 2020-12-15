@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>writechapter</title>
+		<title>Jean Forteroche | Écrivain</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -12,6 +12,7 @@
 
 		<script src="https://cdn.tiny.cloud/1/8sg6g6d7h7af4rkmvz2wxtdm50bury1n20n218gmmx6hss36/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 		<script src="public/js/tinymce.js"></script>
+		<link rel="icon" type="image/png" sizes="16x16" href="public/img/logo.png">
 		
 	</head>
 	<body>

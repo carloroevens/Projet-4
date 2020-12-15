@@ -1,5 +1,7 @@
 <?php
-
+/*  
+*	La class AppController sert a afficher les pages mais aussi la connection et deconnexion de l'admin sur le site
+*/
 session_start();
 
 class AppController

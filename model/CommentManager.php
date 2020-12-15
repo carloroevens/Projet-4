@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class s'occupe des fonction SQL pour les commentaires
+*/
 class CommentManager extends Manager
 {
 	public function getComments($postid, $status, $class)

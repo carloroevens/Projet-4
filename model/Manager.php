@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class crée la connection à la base de données
+*/
 class Manager
 {
 	private $db;

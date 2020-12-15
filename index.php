@@ -1,4 +1,7 @@
 <?php
+/*
+*	Cette class sert de router, tout passe par la pour ensuite étre redirigé vers les bonnes fonctions
+*/
 require('controller/Autoloader.php');
 Autoloader::register();
 
