@@ -1,7 +1,4 @@
-
 	<div class="color-blue sticky-top">
-		<div id="top"></div>
-
 		<div class="container">
 			<div class="row p-2">
 				<nav class="col navbar navbar-expand-lg navbar-dark">
