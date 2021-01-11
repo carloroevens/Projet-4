@@ -46,19 +46,19 @@ class PostManager extends Manager
 		$req->execute(array($postId));
 	}
 
-	public function addPost($title, $content, $id)
+	public function addPost($title, $content, $chapter_number)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('INSERT INTO chapter (id_chapter, title, content, date_chapter) VALUES (?, ?, ?, NOW())');
-		$req->execute([$id, $title, $content]);
+		$req = $db->prepare('INSERT INTO chapter (chapter_number, title, content, date_chapter) VALUES (?, ?, ?, NOW())');
+		$req->execute([$chapter_number, $title, $content]);
 	}
 
-	public function updatePost($title, $content, $lastid, $newid)
+	public function updatePost($title, $content, $lastid, $chapter_number)
 	{
 		$db = $this->dbConnect();
 
-		$req = $db->prepare('UPDATE chapter SET id_chapter = ?, title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
-		$req->execute([$newid, $title, $content, $lastid]);
+		$req = $db->prepare('UPDATE chapter SET chapter_number = ?, title = ?, content = ?, date_chapter = NOW() WHERE id = ?');
+		$req->execute([$chapter_number, $title, $content, $lastid]);
 	}
 }

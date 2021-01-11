@@ -74,7 +74,7 @@
 						<div class="card shadow mb-5 mb-md-4">
 							<div class="card-body">
 								<h5 class="card-title text-center"><a class="stretched-link text-decoration-none card-title" href="<?= $posts->getUrl() ?>"><?= $posts->title; ?></a></h5>
-							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->id_chapter; ?></h6>
+							    <h6 class="card-subtitle mb-2 text-muted">Chapitre n°<?= $posts->chapter_number; ?></h6>
 							    <p class="card-text"><?= $posts->getContent(); ?></p>
 							    <p class="card-text text-right"><?= $posts->date_chapter; ?></p>
 							</div>
@@ -95,7 +95,8 @@
 
 		<?php require('footer.php') ?>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	    <script src="public/js/topbutton.js"></script>
 

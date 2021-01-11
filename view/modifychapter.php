@@ -37,7 +37,7 @@
 						</div>
 						<div class="form-group">
 							<label class="h6" for="idchapter">Chapitre n°</label>
-							<input class="form-control w-25" type="text" id="idchapter" name="newid" value="<?= $post->id_chapter; ?>"></input>
+							<input class="form-control w-25" type="text" id="idchapter" name="newid" value="<?= $post->chapter_number; ?>"></input>
 						</div>
 						<textarea name="content">
 							<?= $post->content; ?>
@@ -54,7 +54,7 @@
 
 		<?php require('footer.php') ?>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 	</body>

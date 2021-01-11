@@ -25,7 +25,7 @@
 			<div class="row mb-5">
 				<div class="col">
 					<h1 class="text-center color-yellow display-3"><?= $post->title; ?></h1>
-					<p class="h5 mb-4">Chapitre <?= $post->id_chapter; ?></p>
+					<p class="h5 mb-4">Chapitre <?= $post->chapter_number; ?></p>
 					<p class="mb-4"><?= $post->content; ?></p>
 					<p class="text-muted"><?= $post->date_chapter; ?></p>
 				</div>
@@ -72,10 +72,15 @@
 
 		<!--footer-->
 
+		<div id="scrollUp">
+			<a href="#top"><img src="public/img/top.png"/></a>
+		</div>
+
 		<?php require('footer.php') ?>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	    <script src="public/js/topbutton.js"></script>
 
 	</body>
 </html>
