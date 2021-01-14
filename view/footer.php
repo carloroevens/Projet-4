@@ -7,8 +7,11 @@
 					<li class="mb-3">
 						<a class="text-decoration-none link" href="index.php?action=home">Accueil</a>
 					</li>
-					<li>
+					<li class="mb-3">
 						<a class="text-decoration-none link" href="index.php?action=biography">Biographie</a>
+					</li>
+					<li>
+						<a class="text-decoration-none link" href="index.php?action=chapter&amp;pagenumber=1">Chapitres</a>
 					</li>
 				</ul>
 			</div>
